@@ -11,14 +11,13 @@ class Comparable:
         self.comparisons += 1
         return self.val != other.val
 
-    def __cmp__(self,other):
+    def __lt__(self,other):
         self.comparisons += 1
-        if self.val < other.val:
-            return -1
-        if self.val > other.val:
-            return 1
-        else:
-            return 0
+        return self.val < other.val
+
+    def __le__(self,other):
+        self.comparisons += 1
+        return self.val <= other.val
 
     def __repr__(self):
         return str(self.val);
